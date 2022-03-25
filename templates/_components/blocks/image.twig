@@ -1,0 +1,59 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{% if asset is not null and asset.kind == "image" %}
+    {% set transforms = {
+        'base': {
+            mode: 'crop',
+            ratio: asset.width / asset.height,
+        },
+        'square': {
+            mode: 'crop',
+            ratio: 1,
+        },
+        'landscape-16/9': {
+            mode: 'crop',
+            ratio: 16/9,
+        },
+        'landscape-4/3': {
+            mode: 'crop',
+            ratio: 4/3,
+        },
+        'widescreen': {
+          mode: 'crop',
+            ratio: 21/9,
+        },
+        'portrait': {
+            mode: 'crop',
+            ratio: 4/5,
+        }
+    } %}
+    {% set widths = [
+        { width: 2560 },
+        { width: 500 },
+        { width: 160 },
+    ] %}
+    {% set placeholder = {
+        width: 32,
+        quality: 25,
+    } %}
+    {% set imgContain = imgContain ?? false %}
+    {% set transform = attribute(transforms, transform) %}
+    {% set imgStyle = imgContain ? null : 'object-position: ' ~ (asset.focalpoint.x|round(1, 'common') * 100) ~ '% ' ~ (asset.focalpoint.y|round(1, 'common') * 100) ~ '%;' %}
+    <picture class="{{ picClasses ?? '' }}">
+        {% if asset.extension == 'svg' %}
+            {{ svg(asset) | attr({ class: svgClasses ?? ''}) }}
+        {% else %}
+            {# set placeholder = craft.imgix.transformImage(asset, placeholder, transforms.base|merge({effects: {blur: 1}})) #}
+            {% set transformedImages = craft.imgix.transformImage(asset, widths, transform, { fillTransforms: true }) %}
+            {{ transformedImages.srcset({ 
+                    width: asset.width,
+                    height: asset.height,
+                    class: imgClasses ~ ' lazyload',
+                    lazyLoad: true,
+                    alt: asset.title,
+                    sizes: sizes,
+                    style: imgStyle
+                }) 
+            }}
+        {% endif %}
+    </picture>
+{% endif %}

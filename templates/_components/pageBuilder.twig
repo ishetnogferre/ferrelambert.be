@@ -1,0 +1,28 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+ # Pagebuilder include template
+ # -----------------------------
+ #
+ # This template is used to output HTML for the main content Matrix field.
+ #
+ # An `entry` variable is expected to be defined.
+-#}
+
+{# Load all our blocks with eager loading #}
+{% set modules = entry.pageBuilder.level(1).all %}
+
+{% for i, module in modules %}
+    {% set children = module.children.with([
+        'blockQuote:blockQuotePicker',
+        'blockIconText:blockIcon',
+        'blockImage:blockImage',
+        'blockCta:blockCtaPicker',
+        'blockGallery:blockImage',
+        'blockLogos:blockMultipleAssets'
+    ]).all() %}
+    {# Load our component #}
+    <div class="grid__site {{ module.type.handle }}">
+        {% set moduleLoop = loop %}
+        {% include '_components/modules/' ~ module.type.handle %}
+    </div>
+{% endfor %}

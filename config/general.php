@@ -8,30 +8,34 @@
  * @see \craft\config\GeneralConfig
  */
 
-use craft\helpers\App;
 
-$isDev = App::env('ENVIRONMENT') === 'dev';
-$isProd = App::env('ENVIRONMENT') === 'production';
+$isDev = getenv('ENVIRONMENT') === 'dev';
+$isProd = getenv('ENVIRONMENT') === 'production';
+$isStaging = getenv('ENVIRONMENT') === 'staging';
 
 return [
-    // Default Week Start Day (0 = Sunday, 1 = Monday...)
-    'defaultWeekStartDay' => 1,
+    'defaultWeekStartDay' => 1, // Default Week Start Day (0 = Sunday, 1 = Monday...)
+    'enableCsrfProtection' => true,
+    'omitScriptNameInUrls' => true, // Whether generated URLs should omit "index.php"
+    'extraAllowedFileExtensions' => ['htm', 'html'], // re-add html/html because Craft 3.6 removes them
+    'cpTrigger' => getenv('CP_TRIGGER') ?: 'admin',
+    'securityKey' => getenv('SECURITY_KEY'),
+    'enableGql' => false,
+    'preventUserEnumeration' => true,
 
-    // Whether generated URLs should omit "index.php"
-    'omitScriptNameInUrls' => true,
-
-    // The URI segment that tells Craft to load the control panel
-    'cpTrigger' => App::env('CP_TRIGGER') ?: 'admin',
-
-    // The secure key Craft will use for hashing and encrypting data
-    'securityKey' => App::env('SECURITY_KEY'),
-
-    // Whether Dev Mode should be enabled (see https://craftcms.com/guides/what-dev-mode-does)
-    'devMode' => $isDev,
-
-    // Whether administrative changes should be allowed
     'allowAdminChanges' => $isDev,
-
-    // Whether crawlers should be allowed to index pages and following links
+    'allowUpdates' => $isDev,
+    'backupOnUpdate' => $isDev,
+    'devMode' => $isDev,
+    'enableTemplateCaching' => !$isDev,
     'disallowRobots' => !$isProd,
+    'isSystemLive' => $isProd,
+
+    // Aliases parsed in sites’ settings, volumes’ settings, and Local volumes’ settings
+    'aliases' => [
+        '@webroot' => getenv('BASE_PATH') . 'web',
+        '@basePath' => getenv('BASE_PATH'),
+        '@baseUrl' => getenv('BASE_URL'),
+    ],
+    'userbackToken' => getenv('USERBACK_TOKEN'),
 ];

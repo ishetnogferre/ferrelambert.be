@@ -1,0 +1,54 @@
+{# -- Base HTML layout template that all HTML requests inherit from -- #}
+{% extends craft.app.request.isAjax() and not craft.app.request.getIsPreview()
+  ? "_boilerplate/_layouts/base-ajax-layout.twig"
+  : "_boilerplate/_layouts/base-web-layout.twig"
+%}
+
+{% block htmlTag %}
+    <html class="fonts-loaded" xmlns="http://www.w3.org/1999/xhtml" lang="{{ craft.app.language |slice(0,2) }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+{% endblock htmlTag %}
+
+{# -- Page content that should be included in the <head> -- #}
+{% block headContent %}
+    {# -- Any <meta> tags that should be included in the <head> #}
+    {% block headMeta %}
+    {% endblock headMeta %}
+
+    {# -- Any <link> tags that should be included in the <head> #}
+    {% block headLinks %}
+    {% endblock headLinks %}
+
+    {# -- Inline and polyfill JS #}
+    {% include "_boilerplate/_partials/head-js.twig" %}
+
+    {# -- Any JavaScript that should be included before </head> -- #}
+    {% block headJs %}
+    {% endblock headJs %}
+
+    {# -- Inline and critical CSS #}
+    <style>[v-cloak], [x-cloak] {display: none !important;}</style>
+    {# -- Any CSS that should be included before </head> -- #}
+    {% block headCss %}
+    {% endblock headCss %}
+
+{% endblock headContent %}
+
+{% block bodyTag %}
+    {# Set the `bodyClass` variable to the entry's section handle if there is one, or the first URI segment (this is used by the parent template) #}
+    {% set bodyClass = entry is defined ? entry.section.handle : craft.app.request.segments|first %}
+    <body class="{{ bodyClass ?? '' }}">
+{% endblock %}
+
+{# -- Page content that should be included in the <body> -- #}
+{% block bodyContent %}
+    {# -- Page content that should be included in the <body> -- #}
+    {% block bodyHtml %}
+    {% endblock bodyHtml %}
+
+    {# -- Inline JS #}
+    {% include "_boilerplate/_partials/body-js.twig" %}
+
+    {# -- Any JavaScript that should be included before </body> -- #}
+    {% block bodyJs %}
+    {% endblock bodyJs %}
+{% endblock bodyContent %}

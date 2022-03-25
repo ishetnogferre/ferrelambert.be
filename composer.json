@@ -1,6 +1,52 @@
 {
+  "name": "ferrelambert/portfolio",
+  "description": "Portfolio website of front-end developer Ferre Lambert.",
+  "keywords": [
+    "craft",
+    "craftcms",
+    "portfolio",
+    "front-end",
+    "cms"
+  ],
+  "license": "MIT",
+  "homepage": "https://www.ferrelambert.be/",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Ferre Lambert",
+      "email": "hallo@ferrelambert.be",
+      "homepage": "https://ferrelambert.be",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "RC",
   "require": {
+    "born05/craft-assetusage": "2.2.1",
+    "carlcs/craft-redactorcustomstyles": "3.0.4",
     "craftcms/cms": "^3.7.26",
+    "craftcms/redactor": "2.10.5",
+    "ether/seo": "3.7.4",
+    "hybridinteractive/craft-position-fieldtype": "1.0.17",
+    "hybridinteractive/craft-width-fieldtype": "1.1.0",
+    "mmikkel/cp-clearcache": "1.2.0",
+    "mmikkel/cp-field-inspect": "1.3.1",
+    "nystudio107/craft-eagerbeaver": "1.0.4",
+    "nystudio107/craft-minify": "1.2.11",
+    "nystudio107/craft-scripts": "^1.2.4",
+    "nystudio107/craft-twigpack": "1.2.15",
+    "nystudio107/craft-typogrify": "1.1.19",
+    "percipioglobal/craft-colour-swatches": "1.5.1",
+    "putyourlightson/craft-blitz-recommendations": "1.3.0",
+    "putyourlightson/craft-elements-panel": "1.1.1",
+    "putyourlightson/craft-sherlock": "3.1.3",
+    "putyourlightson/craft-sprig": "1.12.2",
+    "sebastianlenz/linkfield": "1.0.25",
+    "statikbe/craft-config-values": "1.0.1",
+    "studioespresso/craft-dumper": "2.0.0",
+    "verbb/element-index-defaults": "2.0.2",
+    "verbb/expanded-singles": "1.1.4",
+    "verbb/navigation": "1.4.24",
+    "verbb/super-table": "2.7.1",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
@@ -14,8 +60,10 @@
   "config": {
     "allow-plugins": {
       "craftcms/plugin-installer": true,
+      "treeware/plant": true,
       "yiisoft/yii2-composer": true
     },
+    "cache-files-ttl": 0,
     "sort-packages": true,
     "optimize-autoloader": true,
     "platform": {

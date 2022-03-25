@@ -1,0 +1,54 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{% extends "_boilerplate/_layouts/base-html-layout.twig" %}
+
+{# -- Any <meta> tags that should be included in the <head> #}
+{% block headMeta %}
+{% endblock headMeta %}
+
+{# -- Any <link> tags that should be included in the <head> #}
+{% block headLinks %}
+{% endblock headLinks %}
+
+{# -- Any JavaScript that should be included before </head> -- #}
+{% block headJs %}
+    {% if not craft.app.config.general.devMode %}  
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({'language': '{{ language }}'});
+        </script>
+
+        {{ scripts.headScript|raw }}
+    {% endif %}
+{% endblock %}
+
+{# -- Any CSS that should be included before </head> -- #}
+{% block headCss %}
+    {# -- Inline CSS block used by templates for Critical CSS #}
+    {# -- Only use Critical CSS & LoadCSS when we have it available to prevent flashing #}
+    {% set inline_css = block("inline_css") %}
+    {% if inline_css|trim is not empty %}
+        <style>{{ inline_css | raw }}</style>
+    {% endif %}
+    {{ craft.twigpack.includeCssModule("/dist/site.css") }}
+{% endblock headCss %}
+
+{# -- Page body -- #}
+{% block bodyHtml %}
+    <div id="site">
+        {% block header %}{% endblock %}
+        <main>
+            {# -- Primary content block -- #}
+            {% block main %}{% endblock %}
+        </main>
+
+        {# -- Footer -- #}
+        {% block footer %}{% endblock %}
+        {% include "_layouts/_partials/footer" %}
+    </div>
+{% endblock bodyHtml %}
+
+{% block bodyJs %}
+    {% if not craft.app.config.general.devMode %} 
+        {{ scripts.bodyScript|raw }}
+    {% endif %}
+{% endblock bodyJs %}

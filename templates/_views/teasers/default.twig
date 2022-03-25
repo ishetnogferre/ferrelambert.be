@@ -1,0 +1,36 @@
+
+{% set teaserImage = teaserImage ?? entry.teaserImage.one() %}
+{% set teaserTitle = teaserTitle ?? entry.teaserTitle ?? entry.title %}
+{% set teaserDescription = teaserDescription ?? entry.teaserDescription %}
+{% set moreInfoText = "Meer info" %}
+
+<div class="col-span-4 group cursor-pointer mb-16 flex flex-col justify-between">
+    <div onclick="goToUrl('{{ entry.url }}')">
+        <figure class="w-full h-0 aspect-ratio-16/9 overflow-hidden">
+            {% include "_components/blocks/image" with {
+                asset: teaserImage,
+                transform: "landscape-16/9",
+                sizes: "300px",
+                picClasses: "block h-full aspect-ratio-16/9 w-full relative",
+                imgClasses: "absolute h-full w-full top-0 left-0 object-cover"
+            } %}
+        </figure>
+        {% include "_components/typo/heading" with {
+            tag: 'h3',
+            heading: teaserTitle,
+            classes: 'my-2'
+        } %}
+        <div>
+            {{- teaserDescription | typogrify -}}
+        </div>
+    </div>
+    <a href="{{ entry.url }}" title="{{ entry.title }}" class="inline-block text-lg text-green-400 font-bold mt-2">
+        {{- '+ ' ~ moreInfoText -}}
+    </a>
+</div>
+
+{% js at endBody %}
+ function goToUrl(url) {
+    window.location = url;
+ }
+{% endjs %}
