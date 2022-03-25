@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en
+name: 'Ferre Lambert'
+primary: true
+siteGroup: 6e4887ce-b850-4df2-8fae-f21c318a48bf # Ferre Lambert
+sortOrder: 1

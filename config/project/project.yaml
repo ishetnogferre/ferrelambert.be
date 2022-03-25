@@ -1,0 +1,24 @@
+dateModified: 1648198817
+email:
+  fromEmail: hallo@ferrelambert.be
+  fromName: 'Ferre Lambert'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    1e4ccd31-4982-4199-844e-7465097d8a99: Common # Common
+    6e4887ce-b850-4df2-8fae-f21c318a48bf: 'Ferre Lambert' # Ferre Lambert
+    684af263-f853-42cb-9c6d-3d568b9234aa: Home # Home
+    b061b50c-8486-455e-ad4c-101efbccdc92: 'Ferre Lambert' # Ferre Lambert
+    de4e87b4-b1eb-4c4d-80fa-e99aa2dc0f2b: Home # Home
+system:
+  edition: solo
+  live: true
+  name: 'Ferre Lambert'
+  schemaVersion: 3.7.33
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

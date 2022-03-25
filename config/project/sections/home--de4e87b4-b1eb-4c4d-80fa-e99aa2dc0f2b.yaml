@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: home
+name: Home
+propagationMethod: all
+siteSettings:
+  b061b50c-8486-455e-ad4c-101efbccdc92: # Ferre Lambert
+    enabledByDefault: true
+    hasUrls: true
+    template: _resolvers/page
+    uriFormat: __home__
+type: single
