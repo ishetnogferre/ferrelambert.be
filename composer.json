@@ -26,6 +26,7 @@
     "craftcms/cms": "^3.7.26",
     "craftcms/redactor": "2.10.5",
     "ether/seo": "3.7.4",
+    "ext-imagick": "*",
     "hybridinteractive/craft-position-fieldtype": "1.0.17",
     "hybridinteractive/craft-width-fieldtype": "1.1.0",
     "mmikkel/cp-clearcache": "1.2.0",
