@@ -1,0 +1,19 @@
+columnSuffix: txpufvdv
+contentColumnType: text
+fieldGroup: 1e4ccd31-4982-4199-844e-7465097d8a99 # Common
+handle: headerTitle
+instructions: ''
+name: Titel
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

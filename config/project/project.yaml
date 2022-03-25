@@ -1,4 +1,4 @@
-dateModified: 1648239134
+dateModified: 1648239417
 email:
   fromEmail: hallo@ferrelambert.be
   fromName: 'Ferre Lambert'
@@ -9,6 +9,8 @@ meta:
     6e4887ce-b850-4df2-8fae-f21c318a48bf: 'Ferre Lambert' # Ferre Lambert
     684af263-f853-42cb-9c6d-3d568b9234aa: Home # Home
     b061b50c-8486-455e-ad4c-101efbccdc92: 'Ferre Lambert' # Ferre Lambert
+    d4fe365b-c81b-4696-87d8-967cf9ed3c82: Titel # Titel
+    d51622f5-d233-4128-b975-a481dc1874dd: Beschrijving # Beschrijving
     de4e87b4-b1eb-4c4d-80fa-e99aa2dc0f2b: Home # Home
 plugins:
   assetusage:

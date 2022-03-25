@@ -26,7 +26,25 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
-        name: Content
+          -
+            fieldUid: d4fe365b-c81b-4696-87d8-967cf9ed3c82 # Titel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d51622f5-d233-4128-b975-a481dc1874dd # Beschrijving
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Header
         sortOrder: 1
 handle: home
 hasTitleField: false

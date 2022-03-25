@@ -32,7 +32,8 @@ module.exports = {
       },
       colors: {
         fl: {
-          'dark': '#131313'
+          'dark': '#131313',
+          'light': '#fdfdfd'
         }
       },
       gridColumn: {
