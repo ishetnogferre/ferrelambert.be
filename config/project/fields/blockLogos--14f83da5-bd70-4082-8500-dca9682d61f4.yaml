@@ -1,0 +1,34 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 5b9ea4eb-4ef4-4d3f-9167-f255e7352c2a # Blocks
+handle: blockLogos
+instructions: ''
+name: 'Logo''s'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - compressed
+    - image
+  defaultUploadLocationSource: 'volume:34a0a5ef-ce2a-43cc-a8be-f30f9270ec92' # Afbeeldingen
+  defaultUploadLocationSubpath: /logos
+  limit: ''
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:34a0a5ef-ce2a-43cc-a8be-f30f9270ec92' # Afbeeldingen
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

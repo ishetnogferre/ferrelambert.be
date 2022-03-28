@@ -1,0 +1,12 @@
+childBlocks:
+  - blockRedactor
+  - blockLogos
+field: e4bfa0ac-3130-4cb4-b1e7-164e36011877 # Page builder
+group: 388c7d32-a518-4936-9623-7f55e724ac6a # Module
+handle: moduleFull
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 1/1
+sortOrder: 2
+topLevel: true

@@ -1,0 +1,33 @@
+<div class="border-solid border-fl-dark border-28 text-fl-dark lg:h-screen">
+  <div class="grid__site grid-rows-2 h-full">
+    <div class="col-span-14 sm:col-span-7 lg:col-start-1 lg:col-span-4 lg:row-span-1 lg:row-start-1 sm:border-solid sm:border-r-28 sm:border-fl-dark lg:border-none">
+      <picture class="h-full aspect-square w-full block relative">
+        <img src="{{ globals.profilePic.one.url }}" alt="Ferre" class="absolute inset-0 w-full h-full object-cover" />
+      </picture>
+    </div>
+    <div class="col-span-14 sm:col-span-7 lg:col-start-1 lg:col-span-4 lg:row-start-2 border-t-28 border-fl-dark border-solid sm:border-none">
+      <div class="bg-fl-pastel-purple h-full lg:border-t-28 border-solid border-fl-dark p-6">
+        {% include "_components/typo/heading" with {
+        tag: 'h1',
+        heading: entry.headerTitle ?? entry.title,
+        classes: 'text-5xl mb-6'
+        } %}
+        <div class="max-w-prose text-lg">{{- entry.headerDescription|typogrify -}}</div>
+        <div class="flex items-center space-x-4 text-2xl">
+          <a href="https://www.github.com/ishetnogferre" target="_blank" title="Github ishetnogferre" class="no-underline transition-colors duration-200 hover:text-white">
+            <span class="fa-brands fa-github"></span>
+          </a>
+          <a href="https://www.twitter.com/ferrelambert" target="_blank" title="Twitter ferrelambert" class="no-underline transition-colors duration-200 hover:text-white">
+            <span class="fa-brands fa-twitter"></span>
+          </a>
+          <a href="mailto:hallo@ferrelambert.be" target="_blank" title="email hallo@ferrelambert.be" class="no-underline transition-colors duration-200 hover:text-white">
+            <span class="fa-solid fa-envelope-open-text"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-start-1 col-span-14 lg:col-span-8 lg:row-start-1 lg:row-span-2 border-t-28 lg:border-t-0 lg:border-l-28 border-solid border-fl-dark bg-fl-light">
+      {% include "_components/pageBuilder" %}
+    </div>
+  </div>
+</div>

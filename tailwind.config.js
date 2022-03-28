@@ -11,29 +11,22 @@ module.exports = {
     }*/
   ],
   theme: {
-    aspectRatio: {
-      'none': 0,
-      'square': [1, 1],
-      "5/4": [5, 4],
-      "4/3": [4, 3],
-      "3/2": [3, 2],
-      "16/10": [16, 10],
-      "16/9": [16, 9],
-      "21/9": [21, 9],
-    },
     fontFamily: {
-      sans: ['sans-serif'],
+      sans: ['Titillium Web', 'sans-serif'],
       serif: ['serif'],
     },
     extend: {
       borderWidth: {
         3: '3px',
-        5: '5px'
+        5: '5px',
+        28: '28px'
       },
       colors: {
         fl: {
           'dark': '#131313',
-          'light': '#fdfdfd'
+          'light': '#fdfdfd',
+          'pastel-blue': '#91dccf',
+          'pastel-purple': '#bb92d4'
         }
       },
       gridColumn: {

@@ -1,17 +1,31 @@
-dateModified: 1648239417
+dateModified: 1648479903
 email:
   fromEmail: hallo@ferrelambert.be
   fromName: 'Ferre Lambert'
   transportType: craft\mail\transportadapters\Sendmail
 meta:
   __names__:
+    0b3f990e-48f6-40cc-8c6d-00d0b883112d: Profielfoto # Profielfoto
     1e4ccd31-4982-4199-844e-7465097d8a99: Common # Common
+    2ddcf913-a91b-466b-8554-88841a39720a: Redactor # Redactor
+    5b9ea4eb-4ef4-4d3f-9167-f255e7352c2a: Blocks # Blocks
     6e4887ce-b850-4df2-8fae-f21c318a48bf: 'Ferre Lambert' # Ferre Lambert
+    9bb9a1e4-c6e3-462e-9837-a36078342104: Blokken # Blokken
+    14f83da5-bd70-4082-8500-dca9682d61f4: 'Logo''s' # Logo's
+    34a0a5ef-ce2a-43cc-a8be-f30f9270ec92: Afbeeldingen # Afbeeldingen
+    34fe09e1-f58b-4fb4-b115-5cb743fde78d: 1/1 # 1/1
+    388c7d32-a518-4936-9623-7f55e724ac6a: Module # Module
+    511fa9dc-7401-46d1-a546-2db32202aa36: SEO # SEO
     684af263-f853-42cb-9c6d-3d568b9234aa: Home # Home
+    2745dffd-8d6c-45ba-90ab-a1df44669b4e: Globals # Globals
     b061b50c-8486-455e-ad4c-101efbccdc92: 'Ferre Lambert' # Ferre Lambert
+    c6a02621-c938-4e1c-a303-a1ce438903cf: 'Header achtergrond' # Header achtergrond
+    c452f812-ac52-4a0c-8690-f3a5a83b25c7: 'Logo''s' # Logo's
     d4fe365b-c81b-4696-87d8-967cf9ed3c82: Titel # Titel
     d51622f5-d233-4128-b975-a481dc1874dd: Beschrijving # Beschrijving
     de4e87b4-b1eb-4c4d-80fa-e99aa2dc0f2b: Home # Home
+    e4bfa0ac-3130-4cb4-b1e7-164e36011877: 'Page builder' # Page builder
+    f5fc0ec5-6119-4dc4-a860-6f0bf05b6ab3: Tekst # Tekst
 plugins:
   assetusage:
     edition: standard
@@ -58,6 +72,11 @@ plugins:
     enabled: true
     licenseKey: IOUO3FM3IDZEJLWXRIBGH3UV
     schemaVersion: 1.0.21
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: M7MEQT10EVCU9V0ARNO620R8
+    schemaVersion: 2.13.0
   position-fieldtype:
     edition: standard
     enabled: true

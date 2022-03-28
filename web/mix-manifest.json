@@ -1,5 +1,6 @@
 {
     "/dist/site.js": "/dist/site.js",
     "/dist/manifest.js": "/dist/manifest.js",
-    "/dist/site.css": "/dist/site.css"
+    "/dist/site.css": "/dist/site.css",
+    "/dist/.DS_Store": "/dist/.DS_Store"
 }

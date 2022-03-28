@@ -1,0 +1,19 @@
+fieldLayouts:
+  a77fa8bd-f4af-4399-bfcb-256655bf3769:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0b3f990e-48f6-40cc-8c6d-00d0b883112d # Profielfoto
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: globals
+name: Globals
+sortOrder: 1

@@ -1,0 +1,27 @@
+columnSuffix: wgjyzcyx
+contentColumnType: text
+fieldGroup: 5b9ea4eb-4ef4-4d3f-9167-f255e7352c2a # Blocks
+handle: blockRedactor
+instructions: ''
+name: Redactor
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showHtmlButtonForNonAdmins: ''
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

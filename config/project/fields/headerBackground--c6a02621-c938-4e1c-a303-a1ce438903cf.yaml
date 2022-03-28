@@ -1,0 +1,35 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 1e4ccd31-4982-4199-844e-7465097d8a99 # Common
+handle: headerBackground
+instructions: ''
+name: 'Header achtergrond'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - image
+    - json
+    - video
+  defaultUploadLocationSource: 'volume:34a0a5ef-ce2a-43cc-a8be-f30f9270ec92' # Afbeeldingen
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:34a0a5ef-ce2a-43cc-a8be-f30f9270ec92' # Afbeeldingen
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

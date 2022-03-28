@@ -1,0 +1,26 @@
+childBlocks: null
+field: e4bfa0ac-3130-4cb4-b1e7-164e36011877 # Page builder
+fieldLayouts:
+  4f3f7e15-aa5b-4185-b997-fecbb132036d:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 14f83da5-bd70-4082-8500-dca9682d61f4 # Logo's
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Logo''s'
+        sortOrder: 1
+group: 9bb9a1e4-c6e3-462e-9837-a36078342104 # Blokken
+handle: blockLogos
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Logo''s'
+sortOrder: 5
+topLevel: false

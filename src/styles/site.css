@@ -8,8 +8,12 @@
 
 @tailwind utilities;
 
+body {
+  @apply text-fl-light font-sans;
+}
+
 .grid__site {
-  @apply grid gap-x-4;
+  @apply grid;
   grid-template-columns:
     minmax(1rem, 1fr)
     repeat(12, 1fr)

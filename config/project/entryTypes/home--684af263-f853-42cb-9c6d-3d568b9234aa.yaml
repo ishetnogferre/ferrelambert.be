@@ -27,6 +27,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: c6a02621-c938-4e1c-a303-a1ce438903cf # Header achtergrond
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: d4fe365b-c81b-4696-87d8-967cf9ed3c82 # Titel
             instructions: null
             label: null
@@ -46,6 +55,32 @@ fieldLayouts:
             width: 100
         name: Header
         sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: e4bfa0ac-3130-4cb4-b1e7-164e36011877 # Page builder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 511fa9dc-7401-46d1-a546-2db32202aa36 # SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 3
 handle: home
 hasTitleField: false
 name: Home
