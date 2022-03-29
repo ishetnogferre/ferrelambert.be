@@ -48,7 +48,7 @@ jobs:
       # - StrictHostKeyChecking=no will automatically add new host keys to the user known hosts files.
       - name: Deploy with rsync
         run: |
-          rsync -v -a -z --delete-after --exclude=/.git/ --exclude=/web/cpresources/ --exclude=/storage/ --exclude=/node_modules/ --exclude=/web/assets/ "-e ssh -p 22 -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_DIR }}
+          rsync -v -a -z --delete-after --exclude=/.git/ --exclude=/web/cpresources/ --exclude=/storage/ --exclude=/node_modules/ --exclude=/web/assets/ --exclude=/.github/ "-e ssh -p 22 -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_DIR }}
       
       # execute Craft commands on remote server
       - name: Execute SSH commmands on remote server
@@ -67,6 +67,7 @@ jobs:
             ln -s ~/storage ${{ secrets.DEPLOY_DIR }}/storage
             ln -s ~/storage/assets ${{ secrets.DEPLOY_DIR }}/web/assets
             ln -s ${{ secrets.DEPLOY_DIR }}/web ~/www
+            lsn -s ~/.env ${{ secrets.DEPLOY_DIR }}/.env
 
             php craft migrate/all
             php craft project-config/apply
