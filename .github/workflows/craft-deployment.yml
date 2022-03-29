@@ -61,13 +61,15 @@ jobs:
             cd ${{ secrets.DEPLOY_DIR }}
             chmod a+x craft
             
-            rm -rf ${{ secrets.DEPLOY_DIR }}/web/assets
+            rm -rf ~/ferrelambert.be/storage
+            rm -rf ~/ferrelambert.be/web/assets
             rm -rf ~/www
+            rm -rf ~/ferrelambert.be/.env
             
-            ln -s ~/storage ${{ secrets.DEPLOY_DIR }}/storage
-            ln -s ~/storage/assets ${{ secrets.DEPLOY_DIR }}/web/assets
-            ln -s ${{ secrets.DEPLOY_DIR }}/web ~/www
-            ls -s ~/.env ${{ secrets.DEPLOY_DIR }}/.env
+            ln -s ~/storage ~/ferrelambert.be/storage
+            ln -s ~/storage/assets ~/ferrelambert.be/web/assets
+            ln -s ~/ferrelambert.be/web ~/www
+            ls -s ~/.env ~/ferrelambert.be/.env
 
             php craft migrate/all
             php craft project-config/apply
