@@ -48,8 +48,7 @@ jobs:
       # - StrictHostKeyChecking=no will automatically add new host keys to the user known hosts files.
       - name: Deploy with rsync
         run: |
-          rsync -azh --delete-after --exclude={ "/.git/", "/node_modules/" "/storage/", "/web/cpresources/", "/web/assets/"} -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/${{ secrets.DEPLOY_DIR }}
-      
+          rsync -v -a -z --delete --exclude={ ".git/", "node_modules/" "storage/", "web/cpresources/", "web/assets/"} -e "ssh -p 22 -o StrictHostKeyChecking=no" . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_DIR }}
       # execute Craft commands on remote server
       - name: Execute SSH commmands on remote server
         uses: appleboy/ssh-action@master
