@@ -26,11 +26,12 @@
  * 🗂️ Static
  * 🚧 Webpack-dev-server
  */
+require('dotenv').config()
 
 // 🎚️ Base config
 const config = {
   // Dev domain to proxy
-  devProxyDomain: process.env.BASE_URL || 'http://ferrelambert.nitro/',
+  devProxyDomain: process.env.BASE_URL,
   // Paths to observe for changes then trigger a full page reload
   devWatchPaths: ["templates"],
   // Port to use with webpack-dev-server
