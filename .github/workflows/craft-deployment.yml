@@ -58,8 +58,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            cd ${{ secrets.DEPLOY_DIR }}
             chmod a+x craft
 
-            php craft migrate/all
+            php .craft migrate/all
             php craft project-config/apply
             php craft clear-caches/all
