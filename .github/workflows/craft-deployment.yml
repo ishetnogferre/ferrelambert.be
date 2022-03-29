@@ -60,7 +60,14 @@ jobs:
           script: |
             cd ${{ secrets.DEPLOY_DIR }}
             chmod a+x craft
+            
+            rm -rf ${{ secrets.DEPLOY_DIR }}/web/assets
+            rm -rf ~/www
+            
+            ln -s ~/storage ${{ secrets.DEPLOY_DIR }}/storage
+            ln -s ~/storage/assets ${{ secrets.DEPLOY_DIR }}/web/assets
+            ln -s ${{ secrets.DEPLOY_DIR }}/web ~/www
 
-            php .craft migrate/all
+            php craft migrate/all
             php craft project-config/apply
             php craft clear-caches/all
