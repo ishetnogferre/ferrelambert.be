@@ -30,7 +30,7 @@
 // 🎚️ Base config
 const config = {
   // Dev domain to proxy
-  devProxyDomain: process.env.BASE_URL || "http://site.test",
+  devProxyDomain: process.env.BASE_URL || 'http://ferrelambert.nitro/',
   // Paths to observe for changes then trigger a full page reload
   devWatchPaths: ["templates"],
   // Port to use with webpack-dev-server
@@ -41,7 +41,7 @@ const config = {
   buildStaticSite: false,
   // Urls for CriticalCss to look for "above the fold" Css
   criticalCssUrls: [
-    // { urlPath: "/", label: "homepage"},
+    { url: "/", template: "home"},
     // { urlPath: "/", label: "index" },
     // { urlPath: "/about", label: "about" },
   ],
@@ -155,20 +155,23 @@ mix.postCss(
  */
 const criticalDomain = config.devProxyDomain
 if (criticalDomain && config.criticalCssUrls && config.criticalCssUrls.length) {
-  require("laravel-mix-critical")
-  const url = require("url")
-  mix.critical({
+  require("laravel-mix-criticalcss")
+  mix.criticalCss({
     enabled: true,
-    urls: config.criticalCssUrls.map(page => ({
-      src: url.resolve(criticalDomain, page.urlPath),
-      dest: path.join(
-        'templates/_critical',
-        `${page.label}_critical.css`
-      ),
-    })),
+    paths: {
+      base: criticalDomain,
+      templates: '../templates/_critical/',  //Where css files need to be written, all these paths are relative to /public      
+      suffix: '_critical.min'
+    },
+    urls: config.criticalCssUrls,
+    //Now using https://github.com/addyosmani/critical v4.0.1
     options: {
+      //It's important to note here you should NOT set inline:true, this will break the whole system.
       width: 1200,
       height: 1200,
+      penthouse:{
+        timeout:1200000
+      }
     },
   })
 }
@@ -264,66 +267,6 @@ if (!mix.inProduction()) {
   require("laravel-mix-eslint")
   mix.eslint()
 }
-
-/**
- * 🏞 Images
- * Images are optimized and copied to the build directory
- * https://github.com/CupOfTea696/laravel-mix-imagemin
- * https://github.com/Klathmon/imagemin-webpack-plugin#api
- *
- * Important: laravel-mix-imagemin is incompatible with
- * copy-webpack-plugin > 5.1.1, so keep that dependency at that version.
- * See: https://github.com/CupOfTea696/laravel-mix-imagemin/issues/9
- */
-/*require("laravel-mix-imagemin")
-mix.imagemin(
-  {
-    from: path.join(source.images, "**"),
-    to: config.publicBuildFolder,
-    context: "src/images",
-  },
-  {},
-  {
-    gifsicle: { interlaced: true },
-    mozjpeg: { progressive: true, arithmetic: false },
-    optipng: { optimizationLevel: 3 }, // Lower number = speedier/reduced compression
-    svgo: {
-      plugins: [
-        { convertPathData: false },
-        { convertColors: { currentColor: false } },
-        { removeDimensions: true },
-        { removeViewBox: false },
-        { cleanupIDs: false },
-      ],
-    },
-  }
-)*/
-
-/**
-* 🎆 Icons
-* Individual SVG icons are optimised then combined into a single cacheable SVG
-* https://github.com/kisenka/svg-sprite-loader#configuration
-*/
-/*
-require("laravel-mix-svg-sprite")
-mix.svgSprite(source.icons, path.join(config.publicBuildFolder, "sprite.svg"), {
-    symbolId: filePath => `icon-${path.parse(filePath).name}`,
-    extract: true,
-})
-
-// Icon options
-mix.options({
-  imgLoaderOptions: {
-    svgo: {
-      plugins: [
-        { convertColors: { currentColor: true } },
-        { removeDimensions: false },
-        { removeViewBox: false },
-      ],
-    },
-  },
-})
-*/
 
 /**
  * 🗂️ Static
