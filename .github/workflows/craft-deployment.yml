@@ -1,0 +1,65 @@
+name: Craft CMS deployments
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Pull repository into the current pipeline
+      - name: Pull repository
+        uses: actions/checkout@v3.0.0
+
+      # Setup container with private SSH Key (used by rsync)
+      - name: webfactory/ssh-agent
+        # You may pin to the exact commit or the version.
+        # uses: webfactory/ssh-agent@fc49353b67b2b7c1e0e6a600572d01a69f2672dd
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          # Private SSH key to register in the SSH agent
+          ssh-private-key: ${{ secrets.SSH_KEY }}
+          # Where to place the SSH Agent auth socket
+          # ssh-auth-sock: # optional
+
+      # Use a specific version of Node
+      - name: Setup Node
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version-file: .nvmrc
+
+      # Install PHP dependencies
+      - name: Composer install
+        run: composer install --no-interaction --no-progress --no-suggest --optimize-autoloader
+
+      # Install NPM dependencies
+      - name: NPM install
+        run: npm install
+
+      # Build assets 
+      - name: Build assets 
+        run: npm run build
+
+      # RSYNC
+      # - rsync [options] ~/localdir ssh_user@ssh_host:destination_directory
+      # - exclude web/uploads is there to avoid deleting user uploaded files w/ --delete-after
+      # - StrictHostKeyChecking=no will automatically add new host keys to the user known hosts files.
+      - name: Deploy with rsync
+        run: |
+          rsync -azh --delete-after --exclude={ "/.git/", "/node_modules/" "/storage/", "/web/cpresources/", "/web/assets/"} -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/${{ secrets.DEPLOY_DIR }}
+      
+      # execute Craft commands on remote server
+      - name: Execute SSH commmands on remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            chmod a+x craft
+
+            php craft migrate/all
+            php craft project-config/apply
+            php craft clear-caches/all
