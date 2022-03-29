@@ -67,7 +67,7 @@ jobs:
             ln -s ~/storage ${{ secrets.DEPLOY_DIR }}/storage
             ln -s ~/storage/assets ${{ secrets.DEPLOY_DIR }}/web/assets
             ln -s ${{ secrets.DEPLOY_DIR }}/web ~/www
-            lsn -s ~/.env ${{ secrets.DEPLOY_DIR }}/.env
+            ls -s ~/.env ${{ secrets.DEPLOY_DIR }}/.env
 
             php craft migrate/all
             php craft project-config/apply
