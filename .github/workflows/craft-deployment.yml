@@ -69,7 +69,7 @@ jobs:
             ln -s ~/storage ~/ferrelambert.be/storage
             ln -s ~/storage/assets ~/ferrelambert.be/web/assets
             ln -s ~/ferrelambert.be/web ~/www
-            ls -s ~/.env ~/ferrelambert.be/.env
+            cp ~/.env ~/ferrelambert.be/.env
 
             php craft migrate/all
             php craft project-config/apply
