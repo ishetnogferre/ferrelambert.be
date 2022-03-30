@@ -4,9 +4,11 @@
   {% for logo in logos %}
     {% set hasLink = logo.blockLink.url is not null %}
     {% if hasLink %}
-      <a href="{{ logo.blockLink.url }}" target="_blank" class="no-underline block">
+      <a href="{{ logo.blockLink.url }}" target="_blank" class="no-underline block w-1/4 aspect-square">
+    {% else %}
+      <div class="w-1/4 aspect-square">
     {% endif %} 
-    <picture class="block w-1/4 aspect-square">
+    <picture class="block h-full w-full relative">
       {% if logo.kind == 'svg' %}
         {{ svg(asset) | attr({ class: svgClasses ?? ''}) }}
       {% elseif logo.kind == 'image' %}
@@ -15,6 +17,8 @@
     </picture>
     {% if hasLink %}
       </a>
+    {% else %}
+      </div>
     {% endif %}
   {% endfor %}
 </div>
