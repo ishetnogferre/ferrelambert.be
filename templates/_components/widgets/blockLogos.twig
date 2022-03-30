@@ -1,7 +1,7 @@
 {% set logos = block.blockLogos.all %}
 {% set svgClasses = 'h-32' %}
-{% set logoClasses = 'col-span-5 md:col-span-2 lg:col-span-1 aspect-square' %}
-<div class="text-fl-dark grid grid-cols-10 gap-x-8">
+{% set logoClasses = 'col-span-4 md:col-span-3 lg:col-span-2 aspect-square' %}
+<div class="text-fl-dark grid grid-cols-12 gap-x-8">
   {% for logo in logos %}
     {% set hasLink = logo.blockLink.url is not null %}
     {% if hasLink %}
@@ -13,7 +13,7 @@
       {% if logo.kind == 'svg' %}
         {{ svg(asset) | attr({ class: svgClasses ?? ''}) }}
       {% elseif logo.kind == 'image' %}
-        <img src="{{ logo.url }}" class="absolute inset-0 w-full h-full object-contain object-center p-1">
+        <img src="{{ logo.url }}" alt="{{ logo.title }}" class="absolute inset-0 w-full h-full object-contain object-center p-1">
       {% endif %}
     </picture>
     {% if hasLink %}
