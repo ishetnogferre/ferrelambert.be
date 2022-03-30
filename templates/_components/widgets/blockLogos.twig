@@ -1,12 +1,13 @@
 {% set logos = block.blockLogos.all %}
 {% set svgClasses = 'h-32' %}
-<div class="text-fl-dark flex space-x-8">
+{% set logoClasses = 'col-span-5 md:col-span-2 lg:col-span-1 aspect-square' %}
+<div class="text-fl-dark grid grid-cols-10 gap-x-8">
   {% for logo in logos %}
     {% set hasLink = logo.blockLink.url is not null %}
     {% if hasLink %}
-      <a href="{{ logo.blockLink.url }}" target="_blank" class="no-underline block w-1/4 aspect-square">
+      <a href="{{ logo.blockLink.url }}" target="_blank" class="no-underline block {{ logoClasses }}">
     {% else %}
-      <div class="w-1/4 aspect-square">
+      <div class="{{ logoClasses }}">
     {% endif %} 
     <picture class="block h-full w-full relative">
       {% if logo.kind == 'svg' %}
