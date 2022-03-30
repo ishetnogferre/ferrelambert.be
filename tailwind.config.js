@@ -4,12 +4,13 @@ module.exports = {
     './templates/**/**/*.html',
     './src/scripts/**/*.js',
   ],
-  safelist: [
-    /*{
+  /*safelist: [
+    {
       pattern: '',
       variants: '' 
-    }*/
+    }
   ],
+  */
   theme: {
     fontFamily: {
       sans: ['Titillium Web', 'sans-serif'],
@@ -40,6 +41,12 @@ module.exports = {
         13: 'repeat(13, minmax(0, 1fr))',
         14: 'repeat(14, minmax(0, 1fr))',
       },
+      height: {
+        '75vh': '75vh'
+      },
+      minHeight: theme => ({
+      ...theme('height')
+      }),
       spacing: {
         96: '24rem',
         100: '25rem',

@@ -1,0 +1,42 @@
+{
+  "buttons": ["redo", "undo", "format", "bold", "italic", "lists", "link", "image"],
+  "formatting": ["p", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote"],
+  "plugins": ["customstyles", "fontcolor", "widget", "table", "alignment", "fontsize", "inlinebutton"],
+  "fontcolors": [
+    "#292929",
+    "#F1F1F1",
+    "#4c59a4",
+    "#577590",
+    "#43AA8B",
+    "#90BE6D",
+    "#F9C74F",
+    "#F8961E",
+    "#F3722C",
+    "#F94144",
+    "#d17b88"
+  ],
+  "customStyles": {
+    "style": {
+      "dropdown": {
+        "strikethrough": {
+          "args": "del"
+        },
+        "superscript": {
+          "args": "sup"
+        },
+        "subscript": {
+          "args": "sub"
+        },
+        "clearStyles": {
+          "api": "module.inline.clearformat"
+        }
+      }
+    }
+  },
+  "imageUpload": true,
+  "pastePlainText": true,
+  "toolbarFixed": true,
+  "source": true,
+  "linkNewTab": true,
+  "structure": true
+}

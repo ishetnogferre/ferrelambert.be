@@ -1,0 +1,115 @@
+columnSuffix: rgifhsej
+contentColumnType: text
+fieldGroup: 5b9ea4eb-4ef4-4d3f-9167-f255e7352c2a # Blocks
+handle: blockLink
+instructions: ''
+name: Link
+searchable: false
+settings:
+  allowCustomText: '1'
+  allowTarget: '1'
+  allowedLinkNames:
+    2: category
+    3: entry
+    4: site
+    6: custom
+    7: email
+    8: tel
+    9: url
+  autoNoReferrer: ''
+  defaultLinkName: asset
+  defaultText: ''
+  enableAriaLabel: ''
+  enableTitle: ''
+  typeSettings:
+    __assoc__:
+      -
+        - asset
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - allowCustomQuery
+              - ''
+      -
+        - category
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - allowCustomQuery
+              - ''
+      -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - allowCustomQuery
+              - ''
+      -
+        - site
+        -
+          __assoc__:
+            -
+              - sites
+              - '*'
+      -
+        - user
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - allowCustomQuery
+              - ''
+      -
+        - custom
+        -
+          __assoc__:
+            -
+              - disableValidation
+              - ''
+            -
+              - allowAliases
+              - ''
+      -
+        - email
+        -
+          __assoc__:
+            -
+              - disableValidation
+              - ''
+            -
+              - allowAliases
+              - ''
+      -
+        - tel
+        -
+          __assoc__:
+            -
+              - disableValidation
+              - ''
+            -
+              - allowAliases
+              - ''
+      -
+        - url
+        -
+          __assoc__:
+            -
+              - disableValidation
+              - ''
+            -
+              - allowAliases
+              - ''
+translationKeyFormat: null
+translationMethod: none
+type: typedlinkfield\fields\LinkField

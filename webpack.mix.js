@@ -42,7 +42,7 @@ const config = {
   buildStaticSite: false,
   // Urls for CriticalCss to look for "above the fold" Css
   criticalCssUrls: [
-    { url: "/", template: "home"},
+    //{ url: "/", template: "home"},
     // { urlPath: "/", label: "index" },
     // { urlPath: "/about", label: "about" },
   ],

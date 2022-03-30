@@ -1,4 +1,4 @@
-dateModified: 1648479903
+dateModified: 1648637734
 email:
   fromEmail: hallo@ferrelambert.be
   fromName: 'Ferre Lambert'
@@ -26,6 +26,7 @@ meta:
     de4e87b4-b1eb-4c4d-80fa-e99aa2dc0f2b: Home # Home
     e4bfa0ac-3130-4cb4-b1e7-164e36011877: 'Page builder' # Page builder
     f5fc0ec5-6119-4dc4-a860-6f0bf05b6ab3: Tekst # Tekst
+    f66d5fca-0cee-47de-b95a-1db0cbcba32f: Link # Link
 plugins:
   assetusage:
     edition: standard
